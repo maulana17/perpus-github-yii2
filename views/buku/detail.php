@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\buku */
 
-$this->title = $model->nama;
+"<center> $this->title = $model->nama; </center>";
 $this->params['breadcrumbs'][] = ['label' => 'Buku', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -68,70 +68,4 @@ $this->params['breadcrumbs'][] = $this->title;
 
         ],
     ]) ?>
-
-    <p>
-        <!-- <?= Html::a('Baca Buku', ['detail', 'id' => $model->id], ['class' => 'btn btn-success']) ?> -->
-        <?= Html::a('Edit', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Hapus', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-<br>
-<br>
-<br>
-<br>
-
-<p>
-
-
-<?php
-
-$this->title = $model->nama;
-$this->params['breadcrumbs'][] = ['label' => 'Buku', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
-?>
-<div class="buku-view">
-
-     <center><h1><?= Html::encode($this->title) ?></h1></center>
-
-     <br>
-
-     <br>
-
-     <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            [
-                'label' => '<center> Sampul </center>',
-                'headerOptions' => ['style' => 'text-align:center'],
-                'contentOptions' => ['style' => 'text-align:center'],
-                'format' => ['image', ['width' => '300', 'align' => 'center']],
-                'value' => function ($model){
-                    return ('@web/upload/sampul/'.$model->sampul);
-                },
-            ],
-            ],
-    ]) ?>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-
-            [
-                'headerOptions' => ['style' => 'text-align:center'],
-                // 'contentOptions' => ['style' => 'text-align:center'],
-                'attribute' => 'tahun_terbit',
-                'value' => $model->tahun_terbit. ' MASEHI',
-            ],
-            
-            ],
-    ]) ?>
-
-    </p>
-
 </div>

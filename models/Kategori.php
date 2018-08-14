@@ -52,4 +52,13 @@ class Kategori extends \yii\db\ActiveRecord
         ->andWhere(['id_kategori' => $this->id])
         ->count(); 
     }
+   //Untuk menampilkan data buku yg berkaitan dengan form view masing-masing
+   public function findAllBuku() 
+   {
+       return Buku::find()
+       ->andwhere(['id_kategori' => $this->id])
+       ->orderBy(['nama' => SORT_ASC])
+       ->all();
+
+   }
 }

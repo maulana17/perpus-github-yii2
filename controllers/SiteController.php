@@ -31,12 +31,12 @@ class SiteController extends Controller
                     ],
                 ],
             ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
+            // 'verbs' => [
+            //     'class' => VerbFilter::className(),
+            //     'actions' => [
+            //         'logout' => ['post'],
+            //     ],
+            // ],
         ];
     }
 
@@ -96,7 +96,7 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-        $this->layout = "main-gentelella";
+        // $this->layout = "login";
         Yii::$app->user->logout();
 
         return $this->goHome();

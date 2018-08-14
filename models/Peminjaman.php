@@ -80,4 +80,13 @@ class Peminjaman extends \yii\db\ActiveRecord
     {
         return static::find()->count();
     }
+    public function getGrafikListPeminjaman()
+    {
+        static $pegawaiList = ['id_anggota' => 'Anggota', 'id_buku' => 'Buku', 'tanggal_pinjam' => 'Tanggal Pinjam', 'tanggal_kembali' => 'Tanggal Kembali'];
+        $data = [];
+        foreach ($pegawaiList as $key => $pegawai) {
+            $data[] = [$pegawai, (int) static::find()->sum($key)];
+        }
+        return $data;
+    }
 }

@@ -57,4 +57,13 @@ class Penulis extends \yii\db\ActiveRecord
     {
         return static::find()->count();
     }
+    public function getGrafikListPenulis()
+    {
+        static $pegawaiList = ['nama' => 'Nama Anggota', 'alamat' => 'Alamat', 'email' => 'Email', 'telepon' => 'telepon'];
+        $data = [];
+        foreach ($pegawaiList as $key => $pegawai) {
+            $data[] = [$pegawai, (int) static::find()->sum($key)];
+        }
+        return $data;
+    }
 }

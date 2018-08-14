@@ -25,71 +25,67 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
 </head>
-<body class="nav-<?= !empty($_COOKIE['menuIsCollapsed']) && $_COOKIE['menuIsCollapsed'] == 'true' ? 'sm' : 'md' ?>" >
-<?php $this->beginBody(); ?>
-<div class="container body">
+<body class="nav-<?= !empty($_COOKIE['menuIsCollapsed']) && $_COOKIE['menuIsCollapsed'] == 'true' ? 'sm' : 'md' ?>">
+    <?php $this->beginBody(); ?>
 
-    <div class="main_container">
-
-        <div class="col-md-3 left_col">
-            <div class="left_col scroll-view">
-
-                <div class="navbar nav_title" style="border: 0;">
-                    <a href="/" class="site_title"><i class="fa fa-bug" aria-hidden="true"></i><span> Perpustakaan</span></a>
-                </div>
-                <div class="clearfix"></div>
-
-                <!-- menu prile quick info -->
-                <div class="profile">
-                    <div class="profile_pic">
-                        <img src="http://placehold.it/128x128" alt="..." class="img-circle profile_img">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/" class="site_title"><i class="fa fa-bug" aria-hidden="true"></i><span> Perpustakaan</span></a>
                     </div>
-                    <div class="profile_info">
-                        <span>Selamat Datang,</span>
-                        <h2>Maulana</h2>
+                    <div class="clearfix"></div>
+
+                    <!-- menu prile quick info -->
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="images/maul.png" style="width: 50px; height: 50px;" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Selamat Datang,</span>
+                            <h2>Maulana</h2>
+                        </div>
                     </div>
-                </div>
-                <!-- /menu prile quick info -->
+                    <!-- /menu prile quick info -->
 
-                <br />
+                    <br />
 
-                <!-- sidebar menu -->
-                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
-                    <div class="menu_section">
-                        <h3>General</h3>
-                        <?=
-                        \yiister\gentelella\widgets\Menu::widget(
-                            [
-                                "items" => [
-                                    ["label" => "Home", "url" => ["site/index"], "icon" => "home"],
-                                    ["label" => "Buku", "url" => ["buku/index"], "icon" => "book"],
-                                    ["label" => "Penerbit", "url" => ["penerbit/index"], "icon" => "bookmark"],
-                                    ["label" => "Penulis", "url" => ["penulis/index"], "icon" => "pencil"],
-                                    ["label" => "Kategori", "url" => ["kategori/index"], "icon" => "list"],
-                                    [
-                                        "label" => "User",
-                                        "icon" => "users",
-                                        "url" => "#",
-                                        "items" => [
-                                            ["label" => "Anggota", "url" => ["anggota/index"]],
-                                            ["label" => "Petugas", "url" => ["petugas/index"]],
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <?=
+                            \yiister\gentelella\widgets\Menu::widget(
+                                [
+                                    "items" => [
+                                        ["label" => "Home", "url" => ["site/index"], "icon" => "home"],
+                                        ["label" => "Buku", "url" => ["buku/index"], "icon" => "book"],
+                                        ["label" => "Penerbit", "url" => ["penerbit/index"], "icon" => "bookmark"],
+                                        ["label" => "Penulis", "url" => ["penulis/index"], "icon" => "pencil"],
+                                        ["label" => "Kategori", "url" => ["kategori/index"], "icon" => "list"],
+                                        [
+                                            "label" => "User",
+                                            "icon" => "users",
+                                            "url" => "#",
+                                            "items" => [
+                                                ["label" => "Anggota", "url" => ["anggota/index"]],
+                                                ["label" => "Petugas", "url" => ["petugas/index"]],
+                                            ],
                                         ],
+                                        ["label" => "Peminjaman", "url" => ["peminjaman/index"], "icon" => "handshake-o"],
                                     ],
-                                    ["label" => "Peminjaman", "url" => ["peminjaman/index"], "icon" => "handshake-o"],
-                                ],
-                            ]
-                        )
-                        ?>
+                                ]
+                            )
+                            ?>
+                        </div>
                     </div>
+                    <!-- /sidebar menu -->
 
-                </div>
-                <!-- /sidebar menu -->
-
-                <!-- /menu footer buttons -->
-                <div class="sidebar-footer hidden-small">
+                    <!-- /menu footer buttons -->
+                <!-- <div class="sidebar-footer hidden-small">
                     <a data-toggle="tooltip" data-placement="top" title="Settings">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                     </a>
@@ -102,7 +98,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                     <a data-toggle="tooltip" data-placement="top" title="Logout">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
-                </div>
+                </div> -->
                 <!-- /menu footer buttons -->
             </div>
         </div>
@@ -119,7 +115,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="http://placehold.it/128x128" alt="">Maulana
+                                <img src="images/maul.png" style="width: 30px; height: 30px;" alt="">Maulana
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -134,8 +130,8 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                 <li>
                                     <a href="javascript:;">Help</a>
                                 </li>
-                                <li><a href="site/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                                </li>
+                                <li><?= Html::a('Log Out <i class="fa fa-sign-out pull-right">', ['site/logout']); ?></i></li>
+
                             </ul>
                         </li>
 
@@ -147,121 +143,118 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                      <span class="image">
+                                      <span class="image">
                                         <img src="http://placehold.it/128x128" alt="Profile Image" />
                                     </span>
-                      <span>
+                                    <span>
                                         <span>UKhty Nurhayati</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
+                                        <span class="time">3 mins ago</span>
+                                    </span>
+                                    <span class="message">
                                         Assalammualaikum Wr Wb :)
                                     </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>Ustd Warsono</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Mul Kumpul meng Pesantren beli .?
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>Ukhty NUrhayati</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Maulll
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>Umi :)</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Kapan Pulang Nak.?
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="text-center">
-                                        <a href="/">
-                                            <strong>See All Alerts</strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                  <span class="image">
+                                    <img src="http://placehold.it/128x128" alt="Profile Image" />
+                                </span>
+                                <span>
+                                    <span>Ustd Warsono</span>
+                                    <span class="time">3 mins ago</span>
+                                </span>
+                                <span class="message">
+                                    Mul Kumpul meng Pesantren beli .?
+                                </span>
+                            </a>
                         </li>
-
-                    </ul>
-                </nav>
-            </div>
-
-        </div>
-        <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-            <?php if (isset($this->params['h1'])): ?>
-                <div class="page-title">
-                    <div class="title_left">
-                        <h1><?= $this->params['h1'] ?></h1>
-                    </div>
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
+                        <li>
+                            <a>
+                              <span class="image">
+                                <img src="http://placehold.it/128x128" alt="Profile Image" />
                             </span>
-                            </div>
-                        </div>
+                            <span>
+                                <span>Ukhty NUrhayati</span>
+                                <span class="time">3 mins ago</span>
+                            </span>
+                            <span class="message">
+                                Maulll
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                          <span class="image">
+                            <img src="http://placehold.it/128x128" alt="Profile Image" />
+                        </span>
+                        <span>
+                            <span>Umi :)</span>
+                            <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                            Kapan Pulang Nak.?
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <div class="text-center">
+                        <a href="/">
+                            <strong>See All Alerts</strong>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+</div>
+</div>
+<!-- /top navigation -->
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <?php if (isset($this->params['h1'])): ?>
+        <div class="page-title">
+            <div class="title_left">
+                <h1><?= $this->params['h1'] ?></h1>
+            </div>
+            <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
                     </div>
                 </div>
-            <?php endif; ?>
-            <div class="clearfix"></div>
-
-            <?= $content ?>
+            </div>
         </div>
-        <!-- /page content -->
-        <!-- footer content -->
-        <footer>
+    <?php endif; ?>
+    <div class="clearfix"></div>
+
+    <?= $content ?>
+</div>
+<!-- /page content -->
+<!-- footer content -->
+        <!-- <footer>
             <div class="pull-right">
                 Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com" rel="nofollow" target="_blank">Colorlib</a><br />
                 Extension for Yii framework 2 by <a href="http://yiister.ru" rel="nofollow" target="_blank">Yiister</a>
             </div>
             <div class="clearfix"></div>
-        </footer>
+        </footer> -->
         <!-- /footer content -->
     </div>
-
 </div>
 
-<div id="custom_notifications" class="custom-notifications dsp_none">
+<!-- <div id="custom_notifications" class="custom-notifications dsp_none">
     <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
     </ul>
     <div class="clearfix"></div>
     <div id="notif-group" class="tabbed_notifications"></div>
-</div>
+</div> -->
 <!-- /footer content -->
 <?php $this->endBody(); ?>
 </body>

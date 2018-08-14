@@ -7,7 +7,7 @@ use app\models\Anggota;
 /* @var $this yii\web\View */
 /* @var $model app\models\peminjaman */
 
-$this->title = $model->id_anggota;
+$this->title = $model->id;
 
 
 
@@ -33,8 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Edit', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Hapus', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
