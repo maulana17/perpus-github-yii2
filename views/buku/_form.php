@@ -7,6 +7,7 @@ use kartik\select2\Select2;
 use app\models\Penerbit;
 use app\models\Penulis;
 use app\models\Kategori;
+use kartik\file\fileInput;
 // use limion\jqueryfileupload\JQueryFileUpload;
 
 
@@ -72,8 +73,15 @@ use app\models\Kategori;
     
 
     <?= $form->field($model, 'sinopsis')->textarea(['rows' => 7]) ?>
-    <?= $form->field($model, 'sampul')->fileInput() ?>
-    <?= $form->field($model, 'berkas')->fileInput() ?>
+    <?= $form->field($model, 'sampul')->widget(FileInput::classname(), [
+       'data' => $model->berkas,
+       'options' => ['multiple' => true],
+   ]); ?>
+
+   <?= $form->field($model, 'berkas')->widget(FileInput::classname(), [
+       'data' => $model->berkas,
+       'options' => ['multiple' => true],
+   ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
